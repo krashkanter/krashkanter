@@ -9,11 +9,6 @@
 <mask id="reflectmask"><rect x="276" y="96" width="534" height="9" fill="url(#reflect)"/></mask>
 <clipPath id="card"><rect x="0" y="0" width="840" height="240" rx="14"/></clipPath>
 <linearGradient id="g0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5e9fb3"/><stop offset="0.49" stop-color="#1f7a95"/><stop offset="0.51" stop-color="#09566d"/><stop offset="1" stop-color="#0b6a86"/></linearGradient>
-<linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#61b5c3"/><stop offset="0.49" stop-color="#2298ab"/><stop offset="0.51" stop-color="#0c7080"/><stop offset="1" stop-color="#0e899d"/></linearGradient>
-<linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#66cbc6"/><stop offset="0.49" stop-color="#2ab6af"/><stop offset="0.51" stop-color="#128983"/><stop offset="1" stop-color="#16a9a1"/></linearGradient>
-<linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#80dbc0"/><stop offset="0.49" stop-color="#4ecda8"/><stop offset="0.51" stop-color="#319d7d"/><stop offset="1" stop-color="#3cc19a"/></linearGradient>
-<linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a7e7c4"/><stop offset="0.49" stop-color="#84dead"/><stop offset="0.51" stop-color="#5eab81"/><stop offset="1" stop-color="#74d29f"/></linearGradient>
-<linearGradient id="g5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cff0d3"/><stop offset="0.49" stop-color="#bcebc2"/><stop offset="0.51" stop-color="#8eb693"/><stop offset="1" stop-color="#afe0b5"/></linearGradient>
 <image id="bd" x="0" y="0" width="840" height="240" xlink:href="data:image/png;base64,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"/>
 </defs>
 <rect width="840" height="240" rx="14" fill="url(#bg)"/>
@@ -27,54 +22,14 @@
 <path d="M14 0.75 H826" stroke="#c6ecd6" stroke-opacity="0.16" stroke-width="1.5" fill="none"/>
 <text x="276" y="52" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif" font-size="15" letter-spacing="0.2" fill="#cfe0d6">Web / app developer<tspan dx="9" fill="#5c8279">&#183;</tspan><tspan dx="9" fill="#5c8279">hobby game dev</tspan></text>
 <rect x="275" y="77" width="536" height="20" rx="4" fill="#000" fill-opacity="0.28"/>
-<rect x="276.0" y="78" width="279.9" height="18" rx="3" fill="url(#g0)"/>
-<rect x="277.0" y="79" width="277.9" height="8.0" rx="2" fill="url(#spec)"/>
-<rect x="558.9" y="78" width="185.5" height="18" rx="3" fill="url(#g1)"/>
-<rect x="559.9" y="79" width="183.5" height="8.0" rx="2" fill="url(#spec)"/>
-<rect x="747.4" y="78" width="22.5" height="18" rx="3" fill="url(#g2)"/>
-<rect x="748.4" y="79" width="20.5" height="8.0" rx="2" fill="url(#spec)"/>
-<rect x="772.9" y="78" width="10.1" height="18" rx="3" fill="url(#g3)"/>
-<rect x="773.9" y="79" width="8.1" height="8.0" rx="2" fill="url(#spec)"/>
-<rect x="786.1" y="78" width="9.2" height="18" rx="3" fill="url(#g4)"/>
-<rect x="787.1" y="79" width="7.2" height="8.0" rx="2" fill="url(#spec)"/>
-<rect x="798.3" y="78" width="8.7" height="18" rx="3" fill="url(#g5)"/>
-<rect x="799.3" y="79" width="6.7" height="8.0" rx="2" fill="url(#spec)"/>
+<rect x="276.0" y="78" width="531.0" height="18" rx="3" fill="url(#g0)"/>
+<rect x="277.0" y="79" width="529.0" height="8.0" rx="2" fill="url(#spec)"/>
 <g mask="url(#reflectmask)" transform="translate(0,192) scale(1,-1)">
-<rect x="276.0" y="78" width="279.9" height="18" rx="3" fill="#0b6e8c"/>
-<rect x="558.9" y="78" width="185.5" height="18" rx="3" fill="#0f8fa4"/>
-<rect x="747.4" y="78" width="22.5" height="18" rx="3" fill="#17b0a8"/>
-<rect x="772.9" y="78" width="10.1" height="18" rx="3" fill="#3fc9a0"/>
-<rect x="786.1" y="78" width="9.2" height="18" rx="3" fill="#79dba6"/>
-<rect x="798.3" y="78" width="8.7" height="18" rx="3" fill="#b6e9bd"/>
+<rect x="276.0" y="78" width="531.0" height="18" rx="3" fill="#0b6e8c"/>
 </g>
 <circle cx="280" cy="132" r="4.5" fill="#085269"/>
 <circle cx="280" cy="132" r="4.5" fill="url(#g0)"/>
 <ellipse cx="279.4" cy="130" rx="2.4" ry="1.5" fill="#fff" fill-opacity="0.45"/>
-<text x="295" y="136" fill="#cfe0d6" font-size="13" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">TypeScript</text>
-<text x="522" y="136" fill="#5c8279" font-size="12" text-anchor="end" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">53%</text>
-<circle cx="548" cy="132" r="4.5" fill="#0b6b7b"/>
-<circle cx="548" cy="132" r="4.5" fill="url(#g1)"/>
-<ellipse cx="547.4" cy="130" rx="2.4" ry="1.5" fill="#fff" fill-opacity="0.45"/>
-<text x="563" y="136" fill="#cfe0d6" font-size="13" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">JavaScript</text>
-<text x="790" y="136" fill="#5c8279" font-size="12" text-anchor="end" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">35%</text>
-<circle cx="280" cy="162" r="4.5" fill="#11847e"/>
-<circle cx="280" cy="162" r="4.5" fill="url(#g2)"/>
-<ellipse cx="279.4" cy="160" rx="2.4" ry="1.5" fill="#fff" fill-opacity="0.45"/>
-<text x="295" y="166" fill="#cfe0d6" font-size="13" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">Dart</text>
-<text x="522" y="166" fill="#5c8279" font-size="12" text-anchor="end" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">5%</text>
-<circle cx="548" cy="162" r="4.5" fill="#2f9778"/>
-<circle cx="548" cy="162" r="4.5" fill="url(#g3)"/>
-<ellipse cx="547.4" cy="160" rx="2.4" ry="1.5" fill="#fff" fill-opacity="0.45"/>
-<text x="563" y="166" fill="#cfe0d6" font-size="13" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">Python</text>
-<text x="790" y="166" fill="#5c8279" font-size="12" text-anchor="end" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">2%</text>
-<circle cx="280" cy="192" r="4.5" fill="#5ba47c"/>
-<circle cx="280" cy="192" r="4.5" fill="url(#g4)"/>
-<ellipse cx="279.4" cy="190" rx="2.4" ry="1.5" fill="#fff" fill-opacity="0.45"/>
-<text x="295" y="196" fill="#cfe0d6" font-size="13" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">Jupyter Notebook</text>
-<text x="522" y="196" fill="#5c8279" font-size="12" text-anchor="end" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">2%</text>
-<circle cx="548" cy="192" r="4.5" fill="#88af8e"/>
-<circle cx="548" cy="192" r="4.5" fill="url(#g5)"/>
-<ellipse cx="547.4" cy="190" rx="2.4" ry="1.5" fill="#fff" fill-opacity="0.45"/>
-<text x="563" y="196" fill="#cfe0d6" font-size="13" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">C++</text>
-<text x="790" y="196" fill="#5c8279" font-size="12" text-anchor="end" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">2%</text>
+<text x="295" y="136" fill="#cfe0d6" font-size="13" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">Python</text>
+<text x="522" y="136" fill="#5c8279" font-size="12" text-anchor="end" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">100%</text>
 </svg>
