@@ -1,0 +1,4 @@
+# The original photo stays local; only the dithered tile is published.
+assets/source-portrait.jpg
+preview.html
+__pycache__/

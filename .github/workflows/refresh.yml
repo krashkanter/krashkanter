@@ -1,0 +1,46 @@
+name: refresh card
+
+on:
+  schedule:
+    # 03:17 UTC. Off the hour on purpose - Actions queues are congested at :00
+    # and scheduled jobs get delayed there.
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+# A scheduled run and a push run must never race each other to the same commit.
+concurrency:
+  group: refresh-card
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # No third-party packages: the renderer is stdlib only. Pillow is needed
+      # for the dither tiles, but those are committed and never rebuilt here.
+      - name: Render the card
+        env:
+          # STATS_TOKEN is a classic PAT with `repo` scope, so private work is
+          # counted too. Without it the card falls back to public repos only.
+          GH_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+        run: python scripts/languages.py
+
+      - name: Commit if it changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/languages.svg assets/languages-v1.svg
+          git diff --quiet --cached && echo "no change" && exit 0
+          git commit -m "chore: refresh language card"
+          git push
