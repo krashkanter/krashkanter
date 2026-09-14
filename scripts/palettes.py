@@ -9,7 +9,7 @@ instead of sitting flush.
 PALETTES = {
     # v1 - the avatar's sky rather than its treeline
     "v1": {
-        "ramp": ["#14508f", "#1a67ad", "#2380c9", "#3f9bdc", "#6fb8ea", "#a6d5f5"],
+        "ramp": ["#1f6fc0", "#2a86d6", "#3a9ce6", "#57b0f0", "#7cc3f6", "#a8d8fb"],
         "bg_top": "#0a1626",
         "bg_bottom": "#0f2036",
         "border": "#1d3a5c",
@@ -21,7 +21,7 @@ PALETTES = {
         "spec": "#ffffff",
         "spec_hi": "0.30",
         "spec_lo": "0.05",
-        "gloss": (0.34, 0.08, 0.22, 0.04),
+        "gloss": (0.52, 0.30, 0.10, 0.00),
         "portrait": [(10, 22, 38), (29, 58, 96), (63, 112, 168), (150, 190, 232)],
         "portrait_brightness": 0.86,
         "backdrop_darken": 0.40,
@@ -98,7 +98,7 @@ PALETTES = {
         "spec": "#ffffff",
         "spec_hi": "0.34",
         "spec_lo": "0.06",
-        "gloss": (0.30, 0.06, 0.24, 0.04),
+        "gloss": (0.46, 0.24, 0.10, 0.00),
         # shadows land on ink, highlights on paper
         "portrait": [(38, 56, 78), (92, 122, 156), (160, 188, 214), (236, 242, 248)],
         "portrait_brightness": 0.98,

@@ -8,12 +8,14 @@
 <linearGradient id="reflect" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16232f" stop-opacity="0.16"/><stop offset="1" stop-color="#16232f" stop-opacity="0"/></linearGradient>
 <mask id="reflectmask"><rect x="276" y="82" width="534" height="9" fill="url(#reflect)"/></mask>
 <clipPath id="card"><rect x="0" y="0" width="840" height="240" rx="14"/></clipPath>
-<linearGradient id="g0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#54799f"/><stop offset="0.49" stop-color="#194b7e"/><stop offset="0.51" stop-color="#08305a"/><stop offset="1" stop-color="#0a3c71"/></linearGradient>
-<linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5687b3"/><stop offset="0.49" stop-color="#1c5e99"/><stop offset="0.51" stop-color="#0a4070"/><stop offset="1" stop-color="#0c518d"/></linearGradient>
-<linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5997c6"/><stop offset="0.49" stop-color="#2073b3"/><stop offset="0.51" stop-color="#0e5184"/><stop offset="1" stop-color="#1166a7"/></linearGradient>
-<linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#64a7d7"/><stop offset="0.49" stop-color="#2e89c9"/><stop offset="0.51" stop-color="#196296"/><stop offset="1" stop-color="#207cbe"/></linearGradient>
-<linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#77b6e2"/><stop offset="0.49" stop-color="#499dd8"/><stop offset="0.51" stop-color="#2e73a3"/><stop offset="1" stop-color="#3b91cd"/></linearGradient>
-<linearGradient id="g5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fc4e9"/><stop offset="0.49" stop-color="#69afe2"/><stop offset="0.51" stop-color="#4881aa"/><stop offset="1" stop-color="#5ba3d7"/></linearGradient>
+<clipPath id="barclip"><rect x="276" y="64" width="534" height="18" rx="2"/></clipPath>
+<linearGradient id="edge" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity="0.30"/><stop offset="0.09" stop-color="#000" stop-opacity="0"/><stop offset="0.91" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.30"/></linearGradient>
+<linearGradient id="g0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7b97b5"/><stop offset="0.45" stop-color="#456d97"/><stop offset="0.45" stop-color="#09396a"/><stop offset="1" stop-color="#0a3f76"/></linearGradient>
+<linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7ca3c5"/><stop offset="0.45" stop-color="#477dad"/><stop offset="0.45" stop-color="#0c4c84"/><stop offset="1" stop-color="#0d5493"/></linearGradient>
+<linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fafd3"/><stop offset="0.45" stop-color="#4b8ec1"/><stop offset="0.45" stop-color="#105f9d"/><stop offset="1" stop-color="#126aae"/></linearGradient>
+<linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#87bbe0"/><stop offset="0.45" stop-color="#569fd4"/><stop offset="0.45" stop-color="#1e74b2"/><stop offset="1" stop-color="#2181c6"/></linearGradient>
+<linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#96c7e9"/><stop offset="0.45" stop-color="#6cb0e0"/><stop offset="0.45" stop-color="#3788c1"/><stop offset="1" stop-color="#3d97d6"/></linearGradient>
+<linearGradient id="g5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9d1ee"/><stop offset="0.45" stop-color="#85bee7"/><stop offset="0.45" stop-color="#5699ca"/><stop offset="1" stop-color="#5faae0"/></linearGradient>
 <image id="bd" x="0" y="0" width="840" height="240" xlink:href="data:image/png;base64,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"/>
 </defs>
 <rect width="840" height="240" rx="14" fill="url(#bg)"/>
@@ -25,55 +27,57 @@
 </g>
 <rect x="0.5" y="0.5" width="839" height="239" rx="14" fill="none" stroke="#b4c5d8"/>
 <path d="M14 0.75 H826" stroke="#ffffff" stroke-opacity="0.55" stroke-width="1.5" fill="none"/>
-<rect x="275" y="63" width="536" height="20" rx="4" fill="#000" fill-opacity="0.28"/>
-<rect x="276.0" y="64" width="278.8" height="18" rx="3" fill="url(#g0)"/>
-<rect x="277.0" y="65" width="276.8" height="8.0" rx="2" fill="url(#spec)"/>
-<rect x="557.8" y="64" width="184.7" height="18" rx="3" fill="url(#g1)"/>
-<rect x="558.8" y="65" width="182.7" height="8.0" rx="2" fill="url(#spec)"/>
-<rect x="745.5" y="64" width="22.4" height="18" rx="3" fill="url(#g2)"/>
-<rect x="746.5" y="65" width="20.4" height="8.0" rx="2" fill="url(#spec)"/>
-<rect x="770.9" y="64" width="12.3" height="18" rx="3" fill="url(#g3)"/>
-<rect x="771.9" y="65" width="10.3" height="8.0" rx="2" fill="url(#spec)"/>
-<rect x="786.2" y="64" width="9.2" height="18" rx="3" fill="url(#g4)"/>
-<rect x="787.2" y="65" width="7.2" height="8.0" rx="2" fill="url(#spec)"/>
-<rect x="798.4" y="64" width="8.6" height="18" rx="3" fill="url(#g5)"/>
-<rect x="799.4" y="65" width="6.6" height="8.0" rx="2" fill="url(#spec)"/>
+<g clip-path="url(#barclip)">
+<rect x="276.00" y="64" width="281.78" height="18" fill="url(#g0)"/>
+<rect x="276.00" y="64" width="281.78" height="18" fill="url(#edge)"/>
+<rect x="557.78" y="64" width="187.69" height="18" fill="url(#g1)"/>
+<rect x="557.78" y="64" width="187.69" height="18" fill="url(#edge)"/>
+<rect x="745.46" y="64" width="25.43" height="18" fill="url(#g2)"/>
+<rect x="745.46" y="64" width="25.43" height="18" fill="url(#edge)"/>
+<rect x="770.90" y="64" width="15.28" height="18" fill="url(#g3)"/>
+<rect x="770.90" y="64" width="15.28" height="18" fill="url(#edge)"/>
+<rect x="786.17" y="64" width="12.20" height="18" fill="url(#g4)"/>
+<rect x="786.17" y="64" width="12.20" height="18" fill="url(#edge)"/>
+<rect x="798.37" y="64" width="11.63" height="18" fill="url(#g5)"/>
+<rect x="798.37" y="64" width="11.63" height="18" fill="url(#edge)"/>
+</g>
+<rect x="276.5" y="64.5" width="533" height="17" rx="2" fill="none" stroke="#7e8a97"/>
 <g mask="url(#reflectmask)" transform="translate(0,164) scale(1,-1)">
-<rect x="276.0" y="64" width="278.8" height="18" rx="3" fill="#0a3f76"/>
-<rect x="557.8" y="64" width="184.7" height="18" rx="3" fill="#0d5493"/>
-<rect x="745.5" y="64" width="22.4" height="18" rx="3" fill="#126aae"/>
-<rect x="770.9" y="64" width="12.3" height="18" rx="3" fill="#2181c6"/>
-<rect x="786.2" y="64" width="9.2" height="18" rx="3" fill="#3d97d6"/>
-<rect x="798.4" y="64" width="8.6" height="18" rx="3" fill="#5faae0"/>
+<rect x="276.00" y="64" width="281.78" height="18" fill="#0a3f76"/>
+<rect x="557.78" y="64" width="187.69" height="18" fill="#0d5493"/>
+<rect x="745.46" y="64" width="25.43" height="18" fill="#126aae"/>
+<rect x="770.90" y="64" width="15.28" height="18" fill="#2181c6"/>
+<rect x="786.17" y="64" width="12.20" height="18" fill="#3d97d6"/>
+<rect x="798.37" y="64" width="11.63" height="18" fill="#5faae0"/>
 </g>
 <circle cx="280" cy="118" r="4.5" fill="#082f58"/>
 <circle cx="280" cy="118" r="4.5" fill="url(#g0)"/>
 <ellipse cx="279.4" cy="116" rx="2.4" ry="1.5" fill="#fff" fill-opacity="0.45"/>
 <text x="295" y="122" fill="#16232f" font-size="13" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">TypeScript</text>
-<text x="522" y="122" fill="#5f7286" font-size="12" text-anchor="end" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">53%</text>
-<circle cx="548" cy="118" r="4.5" fill="#0a3f6e"/>
-<circle cx="548" cy="118" r="4.5" fill="url(#g1)"/>
-<ellipse cx="547.4" cy="116" rx="2.4" ry="1.5" fill="#fff" fill-opacity="0.45"/>
-<text x="563" y="122" fill="#16232f" font-size="13" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">JavaScript</text>
-<text x="790" y="122" fill="#5f7286" font-size="12" text-anchor="end" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">35%</text>
+<text x="521" y="122" fill="#5f7286" font-size="12" text-anchor="end" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">53%</text>
+<circle cx="547" cy="118" r="4.5" fill="#0a3f6e"/>
+<circle cx="547" cy="118" r="4.5" fill="url(#g1)"/>
+<ellipse cx="546.4" cy="116" rx="2.4" ry="1.5" fill="#fff" fill-opacity="0.45"/>
+<text x="562" y="122" fill="#16232f" font-size="13" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">JavaScript</text>
+<text x="788" y="122" fill="#5f7286" font-size="12" text-anchor="end" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">35%</text>
 <circle cx="280" cy="150" r="4.5" fill="#0e5082"/>
 <circle cx="280" cy="150" r="4.5" fill="url(#g2)"/>
 <ellipse cx="279.4" cy="148" rx="2.4" ry="1.5" fill="#fff" fill-opacity="0.45"/>
 <text x="295" y="154" fill="#16232f" font-size="13" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">Dart</text>
-<text x="522" y="154" fill="#5f7286" font-size="12" text-anchor="end" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">5%</text>
-<circle cx="548" cy="150" r="4.5" fill="#196194"/>
-<circle cx="548" cy="150" r="4.5" fill="url(#g3)"/>
-<ellipse cx="547.4" cy="148" rx="2.4" ry="1.5" fill="#fff" fill-opacity="0.45"/>
-<text x="563" y="154" fill="#16232f" font-size="13" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">Python</text>
-<text x="790" y="154" fill="#5f7286" font-size="12" text-anchor="end" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">3%</text>
+<text x="521" y="154" fill="#5f7286" font-size="12" text-anchor="end" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">5%</text>
+<circle cx="547" cy="150" r="4.5" fill="#196194"/>
+<circle cx="547" cy="150" r="4.5" fill="url(#g3)"/>
+<ellipse cx="546.4" cy="148" rx="2.4" ry="1.5" fill="#fff" fill-opacity="0.45"/>
+<text x="562" y="154" fill="#16232f" font-size="13" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">Python</text>
+<text x="788" y="154" fill="#5f7286" font-size="12" text-anchor="end" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">3%</text>
 <circle cx="280" cy="182" r="4.5" fill="#2e71a0"/>
 <circle cx="280" cy="182" r="4.5" fill="url(#g4)"/>
 <ellipse cx="279.4" cy="180" rx="2.4" ry="1.5" fill="#fff" fill-opacity="0.45"/>
 <text x="295" y="186" fill="#16232f" font-size="13" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">Jupyter Notebook</text>
-<text x="522" y="186" fill="#5f7286" font-size="12" text-anchor="end" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">2%</text>
-<circle cx="548" cy="182" r="4.5" fill="#4780a8"/>
-<circle cx="548" cy="182" r="4.5" fill="url(#g5)"/>
-<ellipse cx="547.4" cy="180" rx="2.4" ry="1.5" fill="#fff" fill-opacity="0.45"/>
-<text x="563" y="186" fill="#16232f" font-size="13" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">C++</text>
-<text x="790" y="186" fill="#5f7286" font-size="12" text-anchor="end" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">2%</text>
+<text x="521" y="186" fill="#5f7286" font-size="12" text-anchor="end" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">2%</text>
+<circle cx="547" cy="182" r="4.5" fill="#4780a8"/>
+<circle cx="547" cy="182" r="4.5" fill="url(#g5)"/>
+<ellipse cx="546.4" cy="180" rx="2.4" ry="1.5" fill="#fff" fill-opacity="0.45"/>
+<text x="562" y="186" fill="#16232f" font-size="13" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">C++</text>
+<text x="788" y="186" fill="#5f7286" font-size="12" text-anchor="end" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">2%</text>
 </svg>

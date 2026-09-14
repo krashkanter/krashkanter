@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="86" height="34" viewBox="0 0 86 34" role="img" aria-label="Email">
 <defs>
 <clipPath id="r"><rect width="86" height="34" rx="4"/></clipPath>
-<linearGradient id="ic" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stop-color="#80c1ed"/><stop offset="1" stop-color="#185f9f"/></linearGradient>
+<linearGradient id="ic" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stop-color="#8ccaf7"/><stop offset="1" stop-color="#277bc5"/></linearGradient>
 <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.26"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.05"/></linearGradient>
 <linearGradient id="under" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0.20"/><stop offset="0.75" stop-color="#000" stop-opacity="0.10"/><stop offset="1" stop-color="#d8e8ff" stop-opacity="0.05"/></linearGradient>
 </defs>

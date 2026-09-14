@@ -138,7 +138,8 @@ PORTRAIT = 240
 PAD_L = PORTRAIT + 36            # content starts clear of the photo
 BAR_X = PAD_L
 BAR_W = W - PAD_L - 30
-BAR_Y, BAR_H, GAP = 64, 18, 3    # no heading, so the block is centred instead
+BAR_Y, BAR_H = 64, 18            # no heading, so the block is centred instead
+BAR_RADIUS = 2                   # Aero troughs are barely rounded at all
 LEGEND_TOP = 122
 LEGEND_STEP = 32
 
@@ -194,6 +195,15 @@ def _defs(palette, rows):
         f'width="{BAR_W}" height="9" fill="url(#reflect)"/></mask>',
 
         f'<clipPath id="card"><rect x="0" y="0" width="{W}" height="{H}" rx="14"/></clipPath>',
+        f'<clipPath id="barclip"><rect x="{BAR_X}" y="{BAR_Y}" width="{BAR_W}" '
+        f'height="{BAR_H}" rx="{BAR_RADIUS}"/></clipPath>',
+
+        # shading held tight against each section's vertical edges
+        '<linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">'
+        '<stop offset="0" stop-color="#000" stop-opacity="0.30"/>'
+        '<stop offset="0.09" stop-color="#000" stop-opacity="0"/>'
+        '<stop offset="0.91" stop-color="#000" stop-opacity="0"/>'
+        '<stop offset="1" stop-color="#000" stop-opacity="0.30"/></linearGradient>',
     ]
 
     horizon = palette["horizon"]
@@ -213,8 +223,8 @@ def _defs(palette, rows):
         out.append(
             f'<linearGradient id="g{i}" x1="0" y1="0" x2="0" y2="1">'
             f'<stop offset="0" stop-color="{lighten(base, light_top)}"/>'
-            f'<stop offset="0.49" stop-color="{lighten(base, light_mid)}"/>'
-            f'<stop offset="0.51" stop-color="{darken(base, dark_mid)}"/>'
+            f'<stop offset="0.45" stop-color="{lighten(base, light_mid)}"/>'
+            f'<stop offset="0.45" stop-color="{darken(base, dark_mid)}"/>'
             f'<stop offset="1" stop-color="{darken(base, dark_bot)}"/>'
             "</linearGradient>"
         )
@@ -273,24 +283,38 @@ def render(rows, variant):
         f'<path d="M14 0.75 H{W - 14}" stroke="{palette["bevel"]}" '
         f'stroke-opacity="{palette["bevel_opacity"]}" stroke-width="1.5" fill="none"/>',
 
-        # trough the bar sits in
-        f'<rect x="{BAR_X - 1}" y="{BAR_Y - 1}" width="{BAR_W + 2}" '
-        f'height="{BAR_H + 2}" rx="4" fill="#000" fill-opacity="0.28"/>',
+        f'<g clip-path="url(#barclip)">',
     ]
 
+    # Boundaries are accumulated rather than summed per-segment, so the widths
+    # are exact and the last one lands flush on the right edge. The shares
+    # always total 100%, so the trough is never visible - it is a frame, not a
+    # track, which is why it carries no inset and almost no radius.
     segments = []
-    x = float(BAR_X)
+    edge = BAR_X
+    total = 0.0
     for i, (_, pct) in enumerate(rows):
-        w = max(BAR_W * pct / 100 - GAP, 2)
-        segments.append((x, w))
+        total += pct
+        end = BAR_X + BAR_W * total / 100
+        width = end - edge
+        segments.append((edge, width))
         out += [
-            f'<rect x="{x:.1f}" y="{BAR_Y}" width="{w:.1f}" height="{BAR_H}" '
-            f'rx="3" fill="url(#g{i})"/>',
-            # specular cap, inset so it reads as gloss rather than a second bar
-            f'<rect x="{x + 1:.1f}" y="{BAR_Y + 1}" width="{max(w - 2, 1):.1f}" '
-            f'height="{BAR_H / 2 - 1:.1f}" rx="2" fill="url(#spec)"/>',
+            f'<rect x="{edge:.2f}" y="{BAR_Y}" width="{width:.2f}" '
+            f'height="{BAR_H}" fill="url(#g{i})"/>',
+            # each section darkens into its own left and right edges; with no
+            # gap between them this is what keeps the divisions legible
+            f'<rect x="{edge:.2f}" y="{BAR_Y}" width="{width:.2f}" '
+            f'height="{BAR_H}" fill="url(#edge)"/>',
         ]
-        x += w + GAP
+        edge = end
+
+    out += [
+        "</g>",
+        # the frame, drawn over the fill so the corners stay clean
+        f'<rect x="{BAR_X + 0.5}" y="{BAR_Y + 0.5}" width="{BAR_W - 1}" '
+        f'height="{BAR_H - 1}" rx="{BAR_RADIUS}" fill="none" '
+        f'stroke="{darken(palette["border"], 0.30)}"/>',
+    ]
 
     # mirrored strip under the bar, masked to nothing within 9px
     out.append(
@@ -299,12 +323,12 @@ def render(rows, variant):
     )
     for i, (start, w) in enumerate(segments):
         out.append(
-            f'<rect x="{start:.1f}" y="{BAR_Y}" width="{w:.1f}" height="{BAR_H}" '
-            f'rx="3" fill="{ramp[i % len(ramp)]}"/>'
+            f'<rect x="{start:.2f}" y="{BAR_Y}" width="{w:.2f}" height="{BAR_H}" '
+            f'fill="{ramp[i % len(ramp)]}"/>'
         )
     out.append("</g>")
 
-    col_w = (BAR_W + GAP) // 2
+    col_w = BAR_W // 2
     for i, (name, pct) in enumerate(rows):
         base = ramp[i % len(ramp)]
         cx = PAD_L + 4 + (i % 2) * col_w
