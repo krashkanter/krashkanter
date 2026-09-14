@@ -27,24 +27,24 @@
 <path d="M14 0.75 H826" stroke="#c6ecd6" stroke-opacity="0.16" stroke-width="1.5" fill="none"/>
 <text x="276" y="52" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif" font-size="15" letter-spacing="0.2" fill="#cfe0d6">Web / app developer<tspan dx="9" fill="#5c8279">&#183;</tspan><tspan dx="9" fill="#5c8279">hobby game dev</tspan></text>
 <rect x="275" y="77" width="536" height="20" rx="4" fill="#000" fill-opacity="0.28"/>
-<rect x="276.0" y="78" width="279.1" height="18" rx="3" fill="url(#g0)"/>
-<rect x="277.0" y="79" width="277.1" height="8.0" rx="2" fill="url(#spec)"/>
-<rect x="558.1" y="78" width="184.9" height="18" rx="3" fill="url(#g1)"/>
-<rect x="559.1" y="79" width="182.9" height="8.0" rx="2" fill="url(#spec)"/>
-<rect x="746.0" y="78" width="22.5" height="18" rx="3" fill="url(#g2)"/>
-<rect x="747.0" y="79" width="20.5" height="8.0" rx="2" fill="url(#spec)"/>
-<rect x="771.5" y="78" width="11.7" height="18" rx="3" fill="url(#g3)"/>
-<rect x="772.5" y="79" width="9.7" height="8.0" rx="2" fill="url(#spec)"/>
-<rect x="786.1" y="78" width="9.2" height="18" rx="3" fill="url(#g4)"/>
-<rect x="787.1" y="79" width="7.2" height="8.0" rx="2" fill="url(#spec)"/>
+<rect x="276.0" y="78" width="278.9" height="18" rx="3" fill="url(#g0)"/>
+<rect x="277.0" y="79" width="276.9" height="8.0" rx="2" fill="url(#spec)"/>
+<rect x="557.9" y="78" width="184.7" height="18" rx="3" fill="url(#g1)"/>
+<rect x="558.9" y="79" width="182.7" height="8.0" rx="2" fill="url(#spec)"/>
+<rect x="745.6" y="78" width="22.4" height="18" rx="3" fill="url(#g2)"/>
+<rect x="746.6" y="79" width="20.4" height="8.0" rx="2" fill="url(#spec)"/>
+<rect x="771.0" y="78" width="12.1" height="18" rx="3" fill="url(#g3)"/>
+<rect x="772.0" y="79" width="10.1" height="8.0" rx="2" fill="url(#spec)"/>
+<rect x="786.2" y="78" width="9.2" height="18" rx="3" fill="url(#g4)"/>
+<rect x="787.2" y="79" width="7.2" height="8.0" rx="2" fill="url(#spec)"/>
 <rect x="798.4" y="78" width="8.6" height="18" rx="3" fill="url(#g5)"/>
 <rect x="799.4" y="79" width="6.6" height="8.0" rx="2" fill="url(#spec)"/>
 <g mask="url(#reflectmask)" transform="translate(0,192) scale(1,-1)">
-<rect x="276.0" y="78" width="279.1" height="18" rx="3" fill="#0b6e8c"/>
-<rect x="558.1" y="78" width="184.9" height="18" rx="3" fill="#0f8fa4"/>
-<rect x="746.0" y="78" width="22.5" height="18" rx="3" fill="#17b0a8"/>
-<rect x="771.5" y="78" width="11.7" height="18" rx="3" fill="#3fc9a0"/>
-<rect x="786.1" y="78" width="9.2" height="18" rx="3" fill="#79dba6"/>
+<rect x="276.0" y="78" width="278.9" height="18" rx="3" fill="#0b6e8c"/>
+<rect x="557.9" y="78" width="184.7" height="18" rx="3" fill="#0f8fa4"/>
+<rect x="745.6" y="78" width="22.4" height="18" rx="3" fill="#17b0a8"/>
+<rect x="771.0" y="78" width="12.1" height="18" rx="3" fill="#3fc9a0"/>
+<rect x="786.2" y="78" width="9.2" height="18" rx="3" fill="#79dba6"/>
 <rect x="798.4" y="78" width="8.6" height="18" rx="3" fill="#b6e9bd"/>
 </g>
 <circle cx="280" cy="132" r="4.5" fill="#085269"/>
