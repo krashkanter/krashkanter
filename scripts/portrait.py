@@ -109,8 +109,20 @@ def portrait(variant, palette):
     img = ImageOps.autocontrast(img, cutoff=2)
     img = ImageEnhance.Contrast(img).enhance(1.18)
     img = ImageEnhance.Brightness(img).enhance(palette["portrait_brightness"])
-    img = ImageChops.multiply(img, portrait_ramp())
+    img = envelope(img, portrait_ramp(), palette["light"])
     save(bayer(img, palette["portrait"]), f"assets/portrait-{variant}.png")
+
+
+def envelope(img, ramp, light):
+    """Apply a horizontal falloff, toward black on dark and white on light.
+
+    Multiplying is what drives a value to black; on a pale panel that is the
+    wrong direction entirely, so the light variants screen against the
+    inverted ramp and run to paper instead.
+    """
+    if light:
+        return ImageChops.screen(img, ImageOps.invert(ramp))
+    return ImageChops.multiply(img, ramp)
 
 
 def portrait_ramp():
@@ -137,10 +149,13 @@ def backdrop(variant, palette):
     # Same four hues, pulled down far enough that legend text still reads
     # against them. Keeping every stop is what makes the field shimmer - but
     # the darkest one goes to true black so the left edge bottoms out.
-    factor = 1 - palette["backdrop_darken"]
-    stops = [tuple(round(channel * factor) for channel in stop)
-             for stop in palette["portrait"]]
-    stops[0] = (0, 0, 0)
+    if palette["backdrop_stops"]:
+        stops = list(palette["backdrop_stops"])
+    else:
+        factor = 1 - palette["backdrop_darken"]
+        stops = [tuple(round(channel * factor) for channel in stop)
+                 for stop in palette["portrait"]]
+        stops[0] = (0, 0, 0)
     stops = resample(stops, BACKDROP_STOPS)
 
     img = Image.open(SRC).convert("L")
@@ -151,7 +166,7 @@ def backdrop(variant, palette):
     # squash the photo into [PHOTO_FLOOR, 255] so it can only mottle the ramp
     span = 255 - PHOTO_FLOOR
     img = img.point(lambda v: PHOTO_FLOOR + round(span * v / 255))
-    img = ImageChops.multiply(light_ramp(), img)
+    img = envelope(img, light_ramp(), palette["light"])
     save(bayer(img, stops), f"assets/backdrop-{variant}.png", colors=8)
 
 

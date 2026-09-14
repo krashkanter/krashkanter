@@ -18,8 +18,13 @@ import urllib.request
 
 from palettes import PALETTES, get
 
-# The variant the profile actually shows; CI copies it to languages.svg.
+# The variant the profile shows by default; CI copies it to languages.svg and
+# it is the fallback for anyone whose theme cannot be resolved.
 PRIMARY = "v1"
+
+# Everything the README references, so a bare run refreshes all of it. The
+# light card would otherwise freeze while the dark one kept updating.
+PUBLISHED = ["v1", "light"]
 
 # --- tuning -----------------------------------------------------------------
 
@@ -133,14 +138,9 @@ PORTRAIT = 240
 PAD_L = PORTRAIT + 36            # content starts clear of the photo
 BAR_X = PAD_L
 BAR_W = W - PAD_L - 30
-TAGLINE_Y = 52
-BAR_Y, BAR_H, GAP = 78, 18, 3
-LEGEND_TOP = 136
-LEGEND_STEP = 30
-
-# Said plainly, and split so the paid work reads first and the hobby sits
-# back in the dim colour rather than competing with it.
-TAGLINE = ("Web / app developer", "hobby game dev")
+BAR_Y, BAR_H, GAP = 64, 18, 3    # no heading, so the block is centred instead
+LEGEND_TOP = 122
+LEGEND_STEP = 32
 
 # Named, never embedded - the viewer's own copy resolves it, so there is no
 # font licence in play. Segoe UI only exists on Windows; Noto Sans catches
@@ -183,10 +183,13 @@ def _defs(palette, rows):
         f'<mask id="fademask"><rect x="{PORTRAIT - 72}" y="0" width="72" '
         f'height="{H}" fill="url(#fade)"/></mask>',
 
-        # reflection below the bar, gone within a few pixels
+        # reflection below the bar, gone within a few pixels. White on a dark
+        # panel, ink on a pale one - a white reflection on paper is nothing.
         '<linearGradient id="reflect" x1="0" y1="0" x2="0" y2="1">'
-        '<stop offset="0" stop-color="#fff" stop-opacity="0.24"/>'
-        '<stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>',
+        f'<stop offset="0" stop-color="{palette["reflect"][0]}" '
+        f'stop-opacity="{palette["reflect"][1]}"/>'
+        f'<stop offset="1" stop-color="{palette["reflect"][0]}" '
+        'stop-opacity="0"/></linearGradient>',
         f'<mask id="reflectmask"><rect x="{BAR_X}" y="{BAR_Y + BAR_H}" '
         f'width="{BAR_W}" height="9" fill="url(#reflect)"/></mask>',
 
@@ -270,11 +273,6 @@ def render(rows, variant):
         f'<path d="M14 0.75 H{W - 14}" stroke="{palette["bevel"]}" '
         f'stroke-opacity="{palette["bevel_opacity"]}" stroke-width="1.5" fill="none"/>',
 
-        f'<text x="{PAD_L}" y="{TAGLINE_Y}" font-family="{SANS}" font-size="15" '
-        f'letter-spacing="0.2" fill="{text}">{TAGLINE[0]}'
-        f'<tspan dx="9" fill="{dim}">&#183;</tspan>'
-        f'<tspan dx="9" fill="{dim}">{TAGLINE[1]}</tspan></text>',
-
         # trough the bar sits in
         f'<rect x="{BAR_X - 1}" y="{BAR_Y - 1}" width="{BAR_W + 2}" '
         f'height="{BAR_H + 2}" rx="4" fill="#000" fill-opacity="0.28"/>',
@@ -332,9 +330,9 @@ if __name__ == "__main__":
     if args == ["--all"]:
         variants = sorted(PALETTES)
     else:
-        # bare invocation renders only what the profile shows, so CI does not
-        # leave the comparison variants dirty in the working tree
-        variants = args or [PRIMARY]
+        # bare invocation renders only what the README references, so CI does
+        # not leave the comparison variants dirty in the working tree
+        variants = args or PUBLISHED
     repos = fetch(os.environ["GH_TOKEN"])
     # A token that cannot see the account returns a near-empty set rather than
     # an error. Refuse to render that instead of committing a fiction.

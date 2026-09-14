@@ -14,7 +14,7 @@ import sys
 
 from PIL import Image
 
-from languages import PRIMARY, SANS, darken, lighten
+from languages import PRIMARY, PUBLISHED, SANS, darken, lighten
 from palettes import PALETTES, get
 
 H = 34          # Aero buttons were short; 40 reads as a modern pill
@@ -137,5 +137,5 @@ def build(variant):
 
 if __name__ == "__main__":
     args = sys.argv[1:]
-    for name in (sorted(PALETTES) if args == ["--all"] else args or [PRIMARY]):
+    for name in (sorted(PALETTES) if args == ["--all"] else args or PUBLISHED):
         build(name)

@@ -1,4 +1,13 @@
-<img src="assets/languages.svg" alt="What I have been writing lately" width="840">
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="assets/languages-light.svg">
+  <img alt="What I have been writing lately" src="assets/languages.svg" width="840">
+</picture>
 
-[<img src="assets/linkedin.svg" alt="LinkedIn" height="34">](https://linkedin.com/in/kkeerthan)
-[<img src="assets/email.svg" alt="Email" height="34">](mailto:kkeerthan2005@gmail.com)
+<a href="https://linkedin.com/in/kkeerthan"><picture>
+  <source media="(prefers-color-scheme: light)" srcset="assets/linkedin-light.svg">
+  <img alt="LinkedIn" src="assets/linkedin.svg" height="34">
+</picture></a>
+<a href="mailto:kkeerthan2005@gmail.com"><picture>
+  <source media="(prefers-color-scheme: light)" srcset="assets/email-light.svg">
+  <img alt="Email" src="assets/email.svg" height="34">
+</picture></a>
