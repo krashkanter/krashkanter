@@ -26,23 +26,23 @@
 <rect x="0.5" y="0.5" width="839" height="239" rx="14" fill="none" stroke="#b4c5d8"/>
 <path d="M14 0.75 H826" stroke="#ffffff" stroke-opacity="0.55" stroke-width="1.5" fill="none"/>
 <rect x="275" y="63" width="536" height="20" rx="4" fill="#000" fill-opacity="0.28"/>
-<rect x="276.0" y="64" width="278.9" height="18" rx="3" fill="url(#g0)"/>
-<rect x="277.0" y="65" width="276.9" height="8.0" rx="2" fill="url(#spec)"/>
-<rect x="557.9" y="64" width="184.7" height="18" rx="3" fill="url(#g1)"/>
-<rect x="558.9" y="65" width="182.7" height="8.0" rx="2" fill="url(#spec)"/>
-<rect x="745.6" y="64" width="22.4" height="18" rx="3" fill="url(#g2)"/>
-<rect x="746.6" y="65" width="20.4" height="8.0" rx="2" fill="url(#spec)"/>
-<rect x="771.0" y="64" width="12.1" height="18" rx="3" fill="url(#g3)"/>
-<rect x="772.0" y="65" width="10.1" height="8.0" rx="2" fill="url(#spec)"/>
+<rect x="276.0" y="64" width="278.8" height="18" rx="3" fill="url(#g0)"/>
+<rect x="277.0" y="65" width="276.8" height="8.0" rx="2" fill="url(#spec)"/>
+<rect x="557.8" y="64" width="184.7" height="18" rx="3" fill="url(#g1)"/>
+<rect x="558.8" y="65" width="182.7" height="8.0" rx="2" fill="url(#spec)"/>
+<rect x="745.5" y="64" width="22.4" height="18" rx="3" fill="url(#g2)"/>
+<rect x="746.5" y="65" width="20.4" height="8.0" rx="2" fill="url(#spec)"/>
+<rect x="770.9" y="64" width="12.3" height="18" rx="3" fill="url(#g3)"/>
+<rect x="771.9" y="65" width="10.3" height="8.0" rx="2" fill="url(#spec)"/>
 <rect x="786.2" y="64" width="9.2" height="18" rx="3" fill="url(#g4)"/>
 <rect x="787.2" y="65" width="7.2" height="8.0" rx="2" fill="url(#spec)"/>
 <rect x="798.4" y="64" width="8.6" height="18" rx="3" fill="url(#g5)"/>
 <rect x="799.4" y="65" width="6.6" height="8.0" rx="2" fill="url(#spec)"/>
 <g mask="url(#reflectmask)" transform="translate(0,164) scale(1,-1)">
-<rect x="276.0" y="64" width="278.9" height="18" rx="3" fill="#0a3f76"/>
-<rect x="557.9" y="64" width="184.7" height="18" rx="3" fill="#0d5493"/>
-<rect x="745.6" y="64" width="22.4" height="18" rx="3" fill="#126aae"/>
-<rect x="771.0" y="64" width="12.1" height="18" rx="3" fill="#2181c6"/>
+<rect x="276.0" y="64" width="278.8" height="18" rx="3" fill="#0a3f76"/>
+<rect x="557.8" y="64" width="184.7" height="18" rx="3" fill="#0d5493"/>
+<rect x="745.5" y="64" width="22.4" height="18" rx="3" fill="#126aae"/>
+<rect x="770.9" y="64" width="12.3" height="18" rx="3" fill="#2181c6"/>
 <rect x="786.2" y="64" width="9.2" height="18" rx="3" fill="#3d97d6"/>
 <rect x="798.4" y="64" width="8.6" height="18" rx="3" fill="#5faae0"/>
 </g>
