@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="104" height="34" viewBox="0 0 104 34" role="img" aria-label="LinkedIn">
+<svg xmlns="http://www.w3.org/2000/svg" width="104" height="34" viewBox="0 0 104 34" role="img" aria-label="LinkedIn">
 <defs>
 <clipPath id="r"><rect width="104" height="34" rx="4"/></clipPath>
 <linearGradient id="ic" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stop-color="#54a3db"/><stop offset="1" stop-color="#0c4d87"/></linearGradient>
@@ -6,12 +6,12 @@
 <linearGradient id="under" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0.20"/><stop offset="0.75" stop-color="#000" stop-opacity="0.10"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.05"/></linearGradient>
 </defs>
 <g clip-path="url(#r)">
-<image x="0" y="0" width="104" height="34" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAAAiAQMAAACJEQ7oAAAABlBMVEX1+fzq8fhzGFXyAAAAeklEQVR42n3QMQ7DIAxG4fcjho5wA4sxp+jQg3nssTskMjhB9YRkPT6EmFPf+l7HAaC56lQd59F5zCe6gqVODY0ret3uXD0redfEH4/oKDePpuF4eGnq7Kzkt/TwduDiYakT4W3A7KXp4W3A2Z0/uq403HHHN+DSWeEHFsMQoFE+UcgAAAAASUVORK5CYII="/>
+<rect width="104" height="34" fill="#e3e6eb"/>
 <rect y="17.0" width="104" height="17.0" fill="url(#under)"/>
 <rect width="104" height="17.0" fill="url(#gloss)"/>
 </g>
-<rect x="0.5" y="0.5" width="103" height="33" rx="4" fill="none" stroke="#75808c"/>
-<rect x="1.5" y="1.5" width="101" height="31" rx="3" fill="none" stroke="#ffffff" stroke-opacity="0.13"/>
+<rect x="0.5" y="0.5" width="103" height="33" rx="3.5" fill="none" stroke="#75808c"/>
+<rect x="1.5" y="1.5" width="101" height="31" rx="2.5" fill="none" stroke="#ffffff" stroke-opacity="0.13"/>
 <g transform="translate(12,9.5) scale(0.6250)"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="url(#ic)"/></g>
 <text x="35" y="22" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif" font-size="13" letter-spacing="0.2" fill="#16232f">LinkedIn</text>
 </svg>

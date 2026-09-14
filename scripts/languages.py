@@ -44,6 +44,54 @@ SKIP = {
 # inflates notebooks by more than an order of magnitude against real source.
 DAMP = {"Jupyter Notebook": 0.04}
 
+# Notebooks are Python wearing a different extension; counting them apart
+# splits one skill across two rows and understates both.
+MERGE = {"Jupyter Notebook": "Python"}
+
+# Each language in its own colour rather than a position on a ramp. Values are
+# the official brand colour where one exists, otherwise the Linguist colour -
+# the one GitHub itself paints that language with, which is what people
+# actually recognise.
+LANGUAGE_COLORS = {
+    "TypeScript": "#3178C6",
+    "JavaScript": "#F7DF1E",
+    "Python": "#3776AB",
+    "Dart": "#0553B1",
+    "C++": "#F34B7D",
+    "C": "#A8B9CC",
+    "C#": "#68217A",
+    "Kotlin": "#7F52FF",
+    "Java": "#EA2D2E",
+    "Go": "#00ADD8",
+    "Rust": "#CE422B",
+    "Swift": "#F05138",
+    "Ruby": "#CC342D",
+    "PHP": "#777BB4",
+    "Lua": "#2C2D72",
+    "R": "#276DC3",
+    "Julia": "#9558B2",
+    "Haskell": "#5E5086",
+    "Scala": "#DC322F",
+    "Elixir": "#4B275F",
+    "Erlang": "#A90533",
+    "Zig": "#F7A41D",
+    "Cuda": "#76B900",
+    "Svelte": "#FF3E00",
+    "Vue": "#41B883",
+    "Objective-C": "#438EFF",
+    "Assembly": "#6E4C13",
+    "Solidity": "#363636",
+    "GDScript": "#478CBF",
+    "HLSL": "#AACE60",
+    "ShaderLab": "#222C37",
+}
+
+
+def language_color(name, index, palette):
+    """Brand colour when the language has one, else fall back to the ramp."""
+    ramp = palette["ramp"]
+    return LANGUAGE_COLORS.get(name, ramp[index % len(ramp)])
+
 OWNER = "krashkanter"
 
 # Deliberately not `viewer`: GITHUB_TOKEN authenticates as the Actions bot, so
@@ -124,7 +172,9 @@ def shares(repos):
             name = edge["node"]["name"]
             if name in SKIP:
                 continue
-            totals[name] = totals.get(name, 0) + edge["size"] * weight * DAMP.get(name, 1.0)
+            value = edge["size"] * weight * DAMP.get(name, 1.0)
+            name = MERGE.get(name, name)
+            totals[name] = totals.get(name, 0) + value
 
     ranked = sorted(totals.items(), key=lambda kv: -kv[1])[:TOP_N]
     total = sum(value for _, value in ranked)
@@ -140,6 +190,7 @@ BAR_X = PAD_L
 BAR_W = W - PAD_L - 30
 BAR_Y, BAR_H = 64, 18            # no heading, so the block is centred instead
 BAR_RADIUS = 2                   # Aero troughs are barely rounded at all
+CARD_RADIUS = 4                  # same as the link buttons, so they read as a set
 LEGEND_TOP = 122
 LEGEND_STEP = 32
 
@@ -194,7 +245,14 @@ def _defs(palette, rows):
         f'<mask id="reflectmask"><rect x="{BAR_X}" y="{BAR_Y + BAR_H}" '
         f'width="{BAR_W}" height="9" fill="url(#reflect)"/></mask>',
 
-        f'<clipPath id="card"><rect x="0" y="0" width="{W}" height="{H}" rx="14"/></clipPath>',
+        f'<clipPath id="card"><rect x="0" y="0" width="{W}" height="{H}" rx="{CARD_RADIUS}"/></clipPath>',
+        # top-edge bevel as a stroke that follows the corners. Drawn as a
+        # straight line it stops dead where the curve begins, leaving a stub.
+        '<linearGradient id="bevelfade" x1="0" y1="0" x2="0" y2="1">'
+        f'<stop offset="0" stop-color="{palette["bevel"]}" '
+        f'stop-opacity="{palette["bevel_opacity"]}"/>'
+        f'<stop offset="0.14" stop-color="{palette["bevel"]}" '
+        'stop-opacity="0"/></linearGradient>',
         f'<clipPath id="barclip"><rect x="{BAR_X}" y="{BAR_Y}" width="{BAR_W}" '
         f'height="{BAR_H}" rx="{BAR_RADIUS}"/></clipPath>',
 
@@ -218,8 +276,8 @@ def _defs(palette, rows):
         )
 
     light_top, light_mid, dark_mid, dark_bot = palette["gloss"]
-    for i, _ in enumerate(rows):
-        base = palette["ramp"][i % len(palette["ramp"])]
+    for i, (name, _) in enumerate(rows):
+        base = language_color(name, i, palette)
         out.append(
             f'<linearGradient id="g{i}" x1="0" y1="0" x2="0" y2="1">'
             f'<stop offset="0" stop-color="{lighten(base, light_top)}"/>'
@@ -255,7 +313,7 @@ def render(rows, variant):
         f'xlink:href="data:image/png;base64,{backdrop_b64}"/>',
         "</defs>",
 
-        f'<rect width="{W}" height="{H}" rx="14" fill="url(#bg)"/>',
+        f'<rect width="{W}" height="{H}" rx="{CARD_RADIUS}" fill="url(#bg)"/>',
         '<g clip-path="url(#card)">',
         '<use xlink:href="#bd"/>',
     ]
@@ -278,10 +336,13 @@ def render(rows, variant):
         "</g>",
 
         # bevel: bright hairline on top, plain border around
-        f'<rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="14" '
-        f'fill="none" stroke="{palette["border"]}"/>',
-        f'<path d="M14 0.75 H{W - 14}" stroke="{palette["bevel"]}" '
-        f'stroke-opacity="{palette["bevel_opacity"]}" stroke-width="1.5" fill="none"/>',
+        # a 1px stroke at 0.5 inset needs radius R - 0.5 to sit flush inside a
+        # clip of radius R; at R itself the fill pokes past it at each corner
+        f'<rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" '
+        f'rx="{CARD_RADIUS - 0.5}" fill="none" stroke="{palette["border"]}"/>',
+        f'<rect x="1.25" y="1.25" width="{W - 2.5}" height="{H - 2.5}" '
+        f'rx="{CARD_RADIUS - 1.25}" fill="none" stroke="url(#bevelfade)" '
+        'stroke-width="1.5"/>',
 
         f'<g clip-path="url(#barclip)">',
     ]
@@ -312,7 +373,7 @@ def render(rows, variant):
         "</g>",
         # the frame, drawn over the fill so the corners stay clean
         f'<rect x="{BAR_X + 0.5}" y="{BAR_Y + 0.5}" width="{BAR_W - 1}" '
-        f'height="{BAR_H - 1}" rx="{BAR_RADIUS}" fill="none" '
+        f'height="{BAR_H - 1}" rx="{BAR_RADIUS - 0.5}" fill="none" '
         f'stroke="{darken(palette["border"], 0.30)}"/>',
     ]
 
@@ -324,13 +385,13 @@ def render(rows, variant):
     for i, (start, w) in enumerate(segments):
         out.append(
             f'<rect x="{start:.2f}" y="{BAR_Y}" width="{w:.2f}" height="{BAR_H}" '
-            f'fill="{ramp[i % len(ramp)]}"/>'
+            f'fill="{language_color(rows[i][0], i, palette)}"/>'
         )
     out.append("</g>")
 
     col_w = BAR_W // 2
     for i, (name, pct) in enumerate(rows):
-        base = ramp[i % len(ramp)]
+        base = language_color(name, i, palette)
         cx = PAD_L + 4 + (i % 2) * col_w
         cy = LEGEND_TOP + (i // 2) * LEGEND_STEP
         out += [

@@ -42,10 +42,6 @@ LIGHT_GAMMA = 1.15
 # into the middle of the card.
 PHOTO_FLOOR = 168  # of 255
 
-# A gentle mottle needs more levels to be visible at all - at four stops it
-# quantises away into a flat ramp. Six keeps the texture without brightening.
-BACKDROP_STOPS = 6
-
 # The photo sits on the left, so it has to fall into the black as well or the
 # card still reads bright-left. Floor is how much survives at the very edge;
 # the exponent below 1 makes the recovery fast, so only the outer strip goes.
@@ -145,6 +141,21 @@ def light_ramp():
     return row.resize((CARD_W, CARD_H))
 
 
+def falling_ramp(floor):
+    """Paper at the left, easing down to `floor` at the right.
+
+    On a light panel the falloff is carried by ink density rather than by
+    colour, so the envelope descends instead of climbing.
+    """
+    span = 255 - floor
+    row = Image.new("L", (CARD_W, 1))
+    row.putdata([
+        round(255 - span * (x / (CARD_W - 1)) ** LIGHT_GAMMA)
+        for x in range(CARD_W)
+    ])
+    return row.resize((CARD_W, CARD_H))
+
+
 def backdrop(variant, palette):
     # Same four hues, pulled down far enough that legend text still reads
     # against them. Keeping every stop is what makes the field shimmer - but
@@ -156,7 +167,7 @@ def backdrop(variant, palette):
         stops = [tuple(round(channel * factor) for channel in stop)
                  for stop in palette["portrait"]]
         stops[0] = (0, 0, 0)
-    stops = resample(stops, BACKDROP_STOPS)
+    stops = resample(stops, palette["backdrop_levels"])
 
     img = Image.open(SRC).convert("L")
     img = ImageOps.fit(img, (CARD_W, CARD_H), Image.LANCZOS, centering=(0.5, 0.42))
@@ -166,7 +177,10 @@ def backdrop(variant, palette):
     # squash the photo into [PHOTO_FLOOR, 255] so it can only mottle the ramp
     span = 255 - PHOTO_FLOOR
     img = img.point(lambda v: PHOTO_FLOOR + round(span * v / 255))
-    img = envelope(img, light_ramp(), palette["light"])
+    if palette["light"]:
+        img = ImageChops.multiply(falling_ramp(palette["backdrop_floor"]), img)
+    else:
+        img = ImageChops.multiply(light_ramp(), img)
     save(bayer(img, stops), f"assets/backdrop-{variant}.png", colors=8)
 
 

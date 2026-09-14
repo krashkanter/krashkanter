@@ -26,6 +26,8 @@ PALETTES = {
         "portrait_brightness": 0.86,
         "backdrop_darken": 0.40,
         "backdrop_stops": None,
+        "backdrop_levels": 6,
+        "backdrop_floor": None,
         "light": False,
         "reflect": ("#fff", "0.24"),
         "horizon": None,
@@ -50,6 +52,8 @@ PALETTES = {
         "portrait_brightness": 0.80,
         "backdrop_darken": 0.58,
         "backdrop_stops": None,
+        "backdrop_levels": 6,
+        "backdrop_floor": None,
         "light": False,
         "reflect": ("#fff", "0.24"),
         "horizon": None,
@@ -76,6 +80,8 @@ PALETTES = {
         "portrait_brightness": 0.86,
         "backdrop_darken": 0.66,
         "backdrop_stops": None,
+        "backdrop_levels": 6,
+        "backdrop_floor": None,
         "light": False,
         "reflect": ("#fff", "0.24"),
         # warm light pooling at the bottom edge, with a black skyline over it
@@ -91,7 +97,7 @@ PALETTES = {
         "bg_bottom": "#e3ebf4",
         "border": "#b4c5d8",
         "text": "#16232f",
-        "dim": "#5f7286",
+        "dim": "#48596b",
         "sheen": "#ffffff",
         "bevel": "#ffffff",
         "bevel_opacity": "0.55",
@@ -103,9 +109,14 @@ PALETTES = {
         "portrait": [(38, 56, 78), (92, 122, 156), (160, 188, 214), (236, 242, 248)],
         "portrait_brightness": 0.98,
         "backdrop_darken": 0.0,
-        # stated outright rather than derived: on paper the field has to stay
-        # inside a narrow, pale band or the legend stops reading
-        "backdrop_stops": [(170, 195, 220), (202, 218, 234), (226, 236, 245), (245, 249, 252)],
+        # Four stops across a deliberately shallow range. Two stops give a
+        # true ink-and-paper halftone, which is far too loud behind a legend;
+        # stepping through intermediate tones keeps the pattern legible as
+        # texture without it competing with the text sitting on it.
+        "backdrop_stops": [(163, 189, 217), (203, 221, 238), (229, 239, 248), (246, 250, 253)],
+        "backdrop_levels": 4,
+        # how far the tone is allowed to deepen at the right edge
+        "backdrop_floor": 208,
         "light": True,
         # a white reflection is invisible on paper
         "reflect": ("#16232f", "0.16"),

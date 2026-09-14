@@ -1,24 +1,25 @@
-"""Render the contact links as small cards matching the main one.
+"""Render the contact links as Aero buttons.
 
 A link has to be clickable, and an SVG rendered as <img> cannot carry one -
-so each badge is its own file, wrapped in a markdown link in the README.
-Each reuses a slice of the variant's dithered backdrop and fills its icon
-with the same ramp the language bars use.
+so each badge is its own file, wrapped in an anchor in the README.
 
-    python scripts/badges.py              # just the primary variant
+The chassis is plain chrome, no photograph: a solid base under a specular
+that stops dead at the midline, a darker lower half that lifts again at the
+bottom edge, and a dark outer border with a lighter one inset a pixel inside
+it. Only the icon carries the palette, filled with the same blues the bars
+use.
+
+    python scripts/badges.py              # everything the README references
     python scripts/badges.py --all
 """
 
-import base64
 import sys
 
-from PIL import Image
-
-from languages import PRIMARY, PUBLISHED, SANS, darken, lighten
+from languages import PUBLISHED, SANS, darken, lighten
 from palettes import PALETTES, get
 
 H = 34          # Aero buttons were short; 40 reads as a modern pill
-RADIUS = 4      # tight, not rounded
+RADIUS = 4      # tight, not rounded - and the same as the card
 PAD_X = 12
 ICON = 15
 GAP = 8
@@ -49,26 +50,19 @@ BADGES = [
 ]
 
 
-def backdrop_slice(variant, width):
-    """Crop the dark left end of the backdrop, where contrast is strongest."""
-    src = Image.open(f"assets/backdrop-{variant}.png").convert("RGB")
-    # y is chosen for an even patch; x starts past the pitch-black edge so the
-    # badge still shows dither texture rather than flat black
-    tile = src.crop((430, 92, 430 + width, 92 + H))
-    from io import BytesIO
-    buf = BytesIO()
-    tile.convert("P", palette=Image.ADAPTIVE, colors=8).save(
-        buf, format="PNG", optimize=True
-    )
-    return base64.b64encode(buf.getvalue()).decode()
+def chassis(palette):
+    """The button's own colour: lifted off a dark panel, sunk into a pale one."""
+    if palette["light"]:
+        return darken(palette["bg_top"], 0.06)
+    return lighten(palette["bg_bottom"], 0.16)
 
 
 def render(variant, key, label, width):
     palette = get(variant)
     ramp = palette["ramp"]
-    tile = backdrop_slice(variant, width)
+    base = chassis(palette)
 
-    # icon gradient runs the ramp's own span, so the badges and the bars are
+    # the icon runs the ramp's own span, so the buttons and the bars are
     # visibly the same palette rather than merely similar
     lo, hi = ramp[1], ramp[4]
 
@@ -77,7 +71,6 @@ def render(variant, key, label, width):
 
     return "\n".join([
         '<svg xmlns="http://www.w3.org/2000/svg" '
-        'xmlns:xlink="http://www.w3.org/1999/xlink" '
         f'width="{width}" height="{H}" viewBox="0 0 {width} {H}" '
         f'role="img" aria-label="{label}">',
         "<defs>",
@@ -99,16 +92,17 @@ def render(variant, key, label, width):
         "</linearGradient>",
         "</defs>",
         '<g clip-path="url(#r)">',
-        f'<image x="0" y="0" width="{width}" height="{H}" '
-        f'xlink:href="data:image/png;base64,{tile}"/>',
+        f'<rect width="{width}" height="{H}" fill="{base}"/>',
         f'<rect y="{H / 2}" width="{width}" height="{H / 2}" fill="url(#under)"/>',
         f'<rect width="{width}" height="{H / 2}" fill="url(#gloss)"/>',
         "</g>",
-        # double border: dark outer, light inner, one pixel apart
+        # double border: dark outer, light inner, one pixel apart. Each radius
+        # is reduced by its own inset so the curves stay concentric with the
+        # clip - otherwise the corners show a sliver of fill.
         f'<rect x="0.5" y="0.5" width="{width - 1}" height="{H - 1}" '
-        f'rx="{RADIUS}" fill="none" stroke="{darken(palette["border"], 0.35)}"/>',
+        f'rx="{RADIUS - 0.5}" fill="none" stroke="{darken(palette["border"], 0.35)}"/>',
         f'<rect x="1.5" y="1.5" width="{width - 3}" height="{H - 3}" '
-        f'rx="{RADIUS - 1}" fill="none" stroke="{palette["bevel"]}" '
+        f'rx="{RADIUS - 1.5}" fill="none" stroke="{palette["bevel"]}" '
         'stroke-opacity="0.13"/>',
         f'<g transform="translate({icon_x},{icon_y}) scale({scale:.4f})">'
         f'<path d="{ICONS[key]}" fill="url(#ic)"/></g>',
@@ -127,9 +121,9 @@ def build(variant):
             fh.write(svg)
         print(f"wrote {path}")
 
-        # the README links to the unsuffixed name, so switching PRIMARY does
-        # not mean editing markdown
-        if variant == PRIMARY:
+        # the README links to the unsuffixed name, so switching the default
+        # variant does not mean editing markdown
+        if variant == PUBLISHED[0]:
             with open(f"assets/{key}.svg", "w", encoding="utf-8") as fh:
                 fh.write(svg)
             print(f"wrote assets/{key}.svg (from {variant})")
