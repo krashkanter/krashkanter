@@ -27,13 +27,24 @@ jobs:
         with:
           python-version: "3.12"
 
+      # Deliberately no GITHUB_TOKEN fallback. That token authenticates as the
+      # Actions bot and sees only public repos, so falling back would quietly
+      # publish a card that misrepresents the work. Better to stop.
+      - name: Require STATS_TOKEN
+        env:
+          STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
+        run: |
+          if [ -z "$STATS_TOKEN" ]; then
+            echo "::error::STATS_TOKEN is not set. Add a classic PAT with 'repo'"
+            echo "::error::scope so private repositories are counted."
+            exit 1
+          fi
+
       # No third-party packages: the renderer is stdlib only. Pillow is needed
       # for the dither tiles, but those are committed and never rebuilt here.
       - name: Render the card
         env:
-          # STATS_TOKEN is a classic PAT with `repo` scope, so private work is
-          # counted too. Without it the card falls back to public repos only.
-          GH_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.STATS_TOKEN }}
         run: python scripts/languages.py
 
       - name: Commit if it changed

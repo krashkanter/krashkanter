@@ -26,6 +26,9 @@ PRIMARY = "v1"
 HALF_LIFE_DAYS = 240  # a repo untouched this long counts half as much
 TOP_N = 6
 
+# Sanity floor: a token that cannot see the account returns almost nothing.
+MIN_REPOS = 10
+
 # Markup and config noise: real, but not what "what does he write" means.
 SKIP = {
     "HTML", "CSS", "SCSS", "Dockerfile", "Makefile", "CMake",
@@ -36,9 +39,15 @@ SKIP = {
 # inflates notebooks by more than an order of magnitude against real source.
 DAMP = {"Jupyter Notebook": 0.04}
 
+OWNER = "krashkanter"
+
+# Deliberately not `viewer`: GITHUB_TOKEN authenticates as the Actions bot, so
+# `viewer` silently resolves to the bot's own repositories - this one, and
+# nothing else. Naming the account means a weak token yields the public subset
+# rather than a fiction.
 QUERY = """
-query($cursor: String) {
-  viewer {
+query($login: String!, $cursor: String) {
+  user(login: $login) {
     repositories(first: 100, after: $cursor, ownerAffiliations: OWNER,
                  isFork: false, orderBy: {field: PUSHED_AT, direction: DESC}) {
       pageInfo { hasNextPage endCursor }
@@ -75,7 +84,10 @@ def darken(hex_color, amount):
 def fetch(token):
     repos, cursor = [], None
     while True:
-        body = json.dumps({"query": QUERY, "variables": {"cursor": cursor}})
+        body = json.dumps({
+            "query": QUERY,
+            "variables": {"login": OWNER, "cursor": cursor},
+        })
         req = urllib.request.Request(
             "https://api.github.com/graphql",
             data=body.encode(),
@@ -88,7 +100,7 @@ def fetch(token):
             payload = json.load(resp)
         if "errors" in payload:
             raise SystemExit(payload["errors"])
-        page = payload["data"]["viewer"]["repositories"]
+        page = payload["data"]["user"]["repositories"]
         repos += page["nodes"]
         if not page["pageInfo"]["hasNextPage"]:
             return repos
@@ -323,7 +335,15 @@ if __name__ == "__main__":
         # bare invocation renders only what the profile shows, so CI does not
         # leave the comparison variants dirty in the working tree
         variants = args or [PRIMARY]
-    rows = shares(fetch(os.environ["GH_TOKEN"]))
+    repos = fetch(os.environ["GH_TOKEN"])
+    # A token that cannot see the account returns a near-empty set rather than
+    # an error. Refuse to render that instead of committing a fiction.
+    if len(repos) < MIN_REPOS:
+        raise SystemExit(
+            f"only {len(repos)} repos visible to this token; expected at least "
+            f"{MIN_REPOS}. Refusing to render. Is STATS_TOKEN set?"
+        )
+    rows = shares(repos)
 
     for variant in variants:
         path = f"assets/languages-{variant}.svg"
