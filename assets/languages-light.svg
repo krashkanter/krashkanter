@@ -33,10 +33,10 @@
 <rect x="276.00" y="64" width="277.22" height="18" fill="url(#edge)"/>
 <rect x="553.22" y="64" width="185.13" height="18" fill="url(#g1)"/>
 <rect x="553.22" y="64" width="185.13" height="18" fill="url(#edge)"/>
-<rect x="738.36" y="64" width="27.34" height="18" fill="url(#g2)"/>
-<rect x="738.36" y="64" width="27.34" height="18" fill="url(#edge)"/>
-<rect x="765.69" y="64" width="25.03" height="18" fill="url(#g3)"/>
-<rect x="765.69" y="64" width="25.03" height="18" fill="url(#edge)"/>
+<rect x="738.35" y="64" width="27.34" height="18" fill="url(#g2)"/>
+<rect x="738.35" y="64" width="27.34" height="18" fill="url(#edge)"/>
+<rect x="765.70" y="64" width="25.03" height="18" fill="url(#g3)"/>
+<rect x="765.70" y="64" width="25.03" height="18" fill="url(#edge)"/>
 <rect x="790.72" y="64" width="11.45" height="18" fill="url(#g4)"/>
 <rect x="790.72" y="64" width="11.45" height="18" fill="url(#edge)"/>
 <rect x="802.17" y="64" width="7.83" height="18" fill="url(#g5)"/>
@@ -46,8 +46,8 @@
 <g mask="url(#reflectmask)" transform="translate(0,164) scale(1,-1)">
 <rect x="276.00" y="64" width="277.22" height="18" fill="#3178C6"/>
 <rect x="553.22" y="64" width="185.13" height="18" fill="#F7DF1E"/>
-<rect x="738.36" y="64" width="27.34" height="18" fill="#3776AB"/>
-<rect x="765.69" y="64" width="25.03" height="18" fill="#0553B1"/>
+<rect x="738.35" y="64" width="27.34" height="18" fill="#3776AB"/>
+<rect x="765.70" y="64" width="25.03" height="18" fill="#0553B1"/>
 <rect x="790.72" y="64" width="11.45" height="18" fill="#F34B7D"/>
 <rect x="802.17" y="64" width="7.83" height="18" fill="#7F52FF"/>
 </g>
