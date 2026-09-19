@@ -29,27 +29,27 @@
 <rect x="0.5" y="0.5" width="839" height="239" rx="3.5" fill="none" stroke="#b4c5d8"/>
 <rect x="1.25" y="1.25" width="837.5" height="237.5" rx="2.75" fill="none" stroke="url(#bevelfade)" stroke-width="1.5"/>
 <g clip-path="url(#barclip)">
-<rect x="276.00" y="64" width="272.13" height="18" fill="url(#g0)"/>
-<rect x="276.00" y="64" width="272.13" height="18" fill="url(#edge)"/>
-<rect x="548.13" y="64" width="184.17" height="18" fill="url(#g1)"/>
-<rect x="548.13" y="64" width="184.17" height="18" fill="url(#edge)"/>
-<rect x="732.29" y="64" width="26.83" height="18" fill="url(#g2)"/>
-<rect x="732.29" y="64" width="26.83" height="18" fill="url(#edge)"/>
-<rect x="759.12" y="64" width="24.58" height="18" fill="url(#g3)"/>
-<rect x="759.12" y="64" width="24.58" height="18" fill="url(#edge)"/>
-<rect x="783.71" y="64" width="15.05" height="18" fill="url(#g4)"/>
-<rect x="783.71" y="64" width="15.05" height="18" fill="url(#edge)"/>
-<rect x="798.76" y="64" width="11.24" height="18" fill="url(#g5)"/>
-<rect x="798.76" y="64" width="11.24" height="18" fill="url(#edge)"/>
+<rect x="276.00" y="64" width="271.96" height="18" fill="url(#g0)"/>
+<rect x="276.00" y="64" width="271.96" height="18" fill="url(#edge)"/>
+<rect x="547.96" y="64" width="184.34" height="18" fill="url(#g1)"/>
+<rect x="547.96" y="64" width="184.34" height="18" fill="url(#edge)"/>
+<rect x="732.30" y="64" width="26.84" height="18" fill="url(#g2)"/>
+<rect x="732.30" y="64" width="26.84" height="18" fill="url(#edge)"/>
+<rect x="759.15" y="64" width="24.55" height="18" fill="url(#g3)"/>
+<rect x="759.15" y="64" width="24.55" height="18" fill="url(#edge)"/>
+<rect x="783.70" y="64" width="15.07" height="18" fill="url(#g4)"/>
+<rect x="783.70" y="64" width="15.07" height="18" fill="url(#edge)"/>
+<rect x="798.77" y="64" width="11.23" height="18" fill="url(#g5)"/>
+<rect x="798.77" y="64" width="11.23" height="18" fill="url(#edge)"/>
 </g>
 <rect x="276.5" y="64.5" width="533" height="17" rx="1.5" fill="none" stroke="#7e8a97"/>
 <g mask="url(#reflectmask)" transform="translate(0,164) scale(1,-1)">
-<rect x="276.00" y="64" width="272.13" height="18" fill="#3178C6"/>
-<rect x="548.13" y="64" width="184.17" height="18" fill="#F7DF1E"/>
-<rect x="732.29" y="64" width="26.83" height="18" fill="#3776AB"/>
-<rect x="759.12" y="64" width="24.58" height="18" fill="#0553B1"/>
-<rect x="783.71" y="64" width="15.05" height="18" fill="#68217A"/>
-<rect x="798.76" y="64" width="11.24" height="18" fill="#F34B7D"/>
+<rect x="276.00" y="64" width="271.96" height="18" fill="#3178C6"/>
+<rect x="547.96" y="64" width="184.34" height="18" fill="#F7DF1E"/>
+<rect x="732.30" y="64" width="26.84" height="18" fill="#3776AB"/>
+<rect x="759.15" y="64" width="24.55" height="18" fill="#0553B1"/>
+<rect x="783.70" y="64" width="15.07" height="18" fill="#68217A"/>
+<rect x="798.77" y="64" width="11.23" height="18" fill="#F34B7D"/>
 </g>
 <circle cx="280" cy="118" r="4.5" fill="#255a94"/>
 <circle cx="280" cy="118" r="4.5" fill="url(#g0)"/>
@@ -60,7 +60,7 @@
 <circle cx="547" cy="118" r="4.5" fill="url(#g1)"/>
 <ellipse cx="546.4" cy="116" rx="2.4" ry="1.5" fill="#fff" fill-opacity="0.45"/>
 <text x="562" y="122" fill="#16232f" font-size="13" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">JavaScript</text>
-<text x="788" y="122" fill="#48596b" font-size="12" text-anchor="end" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">34%</text>
+<text x="788" y="122" fill="#48596b" font-size="12" text-anchor="end" font-family="'Segoe UI','Noto Sans',ui-sans-serif,system-ui,sans-serif">35%</text>
 <circle cx="280" cy="150" r="4.5" fill="#295880"/>
 <circle cx="280" cy="150" r="4.5" fill="url(#g2)"/>
 <ellipse cx="279.4" cy="148" rx="2.4" ry="1.5" fill="#fff" fill-opacity="0.45"/>
