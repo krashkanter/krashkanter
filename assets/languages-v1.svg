@@ -29,12 +29,12 @@
 <rect x="0.5" y="0.5" width="839" height="239" rx="3.5" fill="none" stroke="#1d3a5c"/>
 <rect x="1.25" y="1.25" width="837.5" height="237.5" rx="2.75" fill="none" stroke="url(#bevelfade)" stroke-width="1.5"/>
 <g clip-path="url(#barclip)">
-<rect x="276.00" y="64" width="273.01" height="18" fill="url(#g0)"/>
-<rect x="276.00" y="64" width="273.01" height="18" fill="url(#edge)"/>
-<rect x="549.01" y="64" width="183.36" height="18" fill="url(#g1)"/>
-<rect x="549.01" y="64" width="183.36" height="18" fill="url(#edge)"/>
-<rect x="732.37" y="64" width="26.73" height="18" fill="url(#g2)"/>
-<rect x="732.37" y="64" width="26.73" height="18" fill="url(#edge)"/>
+<rect x="276.00" y="64" width="273.00" height="18" fill="url(#g0)"/>
+<rect x="276.00" y="64" width="273.00" height="18" fill="url(#edge)"/>
+<rect x="549.00" y="64" width="183.35" height="18" fill="url(#g1)"/>
+<rect x="549.00" y="64" width="183.35" height="18" fill="url(#edge)"/>
+<rect x="732.35" y="64" width="26.75" height="18" fill="url(#g2)"/>
+<rect x="732.35" y="64" width="26.75" height="18" fill="url(#edge)"/>
 <rect x="759.10" y="64" width="24.42" height="18" fill="url(#g3)"/>
 <rect x="759.10" y="64" width="24.42" height="18" fill="url(#edge)"/>
 <rect x="783.52" y="64" width="15.31" height="18" fill="url(#g4)"/>
@@ -44,9 +44,9 @@
 </g>
 <rect x="276.5" y="64.5" width="533" height="17" rx="1.5" fill="none" stroke="#142940"/>
 <g mask="url(#reflectmask)" transform="translate(0,164) scale(1,-1)">
-<rect x="276.00" y="64" width="273.01" height="18" fill="#3178C6"/>
-<rect x="549.01" y="64" width="183.36" height="18" fill="#F7DF1E"/>
-<rect x="732.37" y="64" width="26.73" height="18" fill="#3776AB"/>
+<rect x="276.00" y="64" width="273.00" height="18" fill="#3178C6"/>
+<rect x="549.00" y="64" width="183.35" height="18" fill="#F7DF1E"/>
+<rect x="732.35" y="64" width="26.75" height="18" fill="#3776AB"/>
 <rect x="759.10" y="64" width="24.42" height="18" fill="#0553B1"/>
 <rect x="783.52" y="64" width="15.31" height="18" fill="#68217A"/>
 <rect x="798.83" y="64" width="11.17" height="18" fill="#F34B7D"/>
