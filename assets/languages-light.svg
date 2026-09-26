@@ -29,27 +29,27 @@
 <rect x="0.5" y="0.5" width="839" height="239" rx="3.5" fill="none" stroke="#b4c5d8"/>
 <rect x="1.25" y="1.25" width="837.5" height="237.5" rx="2.75" fill="none" stroke="url(#bevelfade)" stroke-width="1.5"/>
 <g clip-path="url(#barclip)">
-<rect x="276.00" y="64" width="258.68" height="18" fill="url(#g0)"/>
-<rect x="276.00" y="64" width="258.68" height="18" fill="url(#edge)"/>
-<rect x="534.68" y="64" width="212.21" height="18" fill="url(#g1)"/>
-<rect x="534.68" y="64" width="212.21" height="18" fill="url(#edge)"/>
-<rect x="746.88" y="64" width="25.36" height="18" fill="url(#g2)"/>
-<rect x="746.88" y="64" width="25.36" height="18" fill="url(#edge)"/>
-<rect x="772.24" y="64" width="14.50" height="18" fill="url(#g3)"/>
-<rect x="772.24" y="64" width="14.50" height="18" fill="url(#edge)"/>
-<rect x="786.74" y="64" width="12.32" height="18" fill="url(#g4)"/>
-<rect x="786.74" y="64" width="12.32" height="18" fill="url(#edge)"/>
-<rect x="799.06" y="64" width="10.94" height="18" fill="url(#g5)"/>
-<rect x="799.06" y="64" width="10.94" height="18" fill="url(#edge)"/>
+<rect x="276.00" y="64" width="254.35" height="18" fill="url(#g0)"/>
+<rect x="276.00" y="64" width="254.35" height="18" fill="url(#edge)"/>
+<rect x="530.35" y="64" width="213.93" height="18" fill="url(#g1)"/>
+<rect x="530.35" y="64" width="213.93" height="18" fill="url(#edge)"/>
+<rect x="744.28" y="64" width="28.59" height="18" fill="url(#g2)"/>
+<rect x="744.28" y="64" width="28.59" height="18" fill="url(#edge)"/>
+<rect x="772.87" y="64" width="14.26" height="18" fill="url(#g3)"/>
+<rect x="772.87" y="64" width="14.26" height="18" fill="url(#edge)"/>
+<rect x="787.13" y="64" width="12.11" height="18" fill="url(#g4)"/>
+<rect x="787.13" y="64" width="12.11" height="18" fill="url(#edge)"/>
+<rect x="799.25" y="64" width="10.75" height="18" fill="url(#g5)"/>
+<rect x="799.25" y="64" width="10.75" height="18" fill="url(#edge)"/>
 </g>
 <rect x="276.5" y="64.5" width="533" height="17" rx="1.5" fill="none" stroke="#7e8a97"/>
 <g mask="url(#reflectmask)" transform="translate(0,164) scale(1,-1)">
-<rect x="276.00" y="64" width="258.68" height="18" fill="#3178C6"/>
-<rect x="534.68" y="64" width="212.21" height="18" fill="#F7DF1E"/>
-<rect x="746.88" y="64" width="25.36" height="18" fill="#3776AB"/>
-<rect x="772.24" y="64" width="14.50" height="18" fill="#68217A"/>
-<rect x="786.74" y="64" width="12.32" height="18" fill="#0553B1"/>
-<rect x="799.06" y="64" width="10.94" height="18" fill="#F34B7D"/>
+<rect x="276.00" y="64" width="254.35" height="18" fill="#3178C6"/>
+<rect x="530.35" y="64" width="213.93" height="18" fill="#F7DF1E"/>
+<rect x="744.28" y="64" width="28.59" height="18" fill="#3776AB"/>
+<rect x="772.87" y="64" width="14.26" height="18" fill="#68217A"/>
+<rect x="787.13" y="64" width="12.11" height="18" fill="#0553B1"/>
+<rect x="799.25" y="64" width="10.75" height="18" fill="#F34B7D"/>
 </g>
 <circle cx="280" cy="118" r="4.5" fill="#255a94"/>
 <circle cx="280" cy="118" r="4.5" fill="url(#g0)"/>
