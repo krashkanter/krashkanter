@@ -33,8 +33,8 @@
 <rect x="276.00" y="64" width="253.99" height="18" fill="url(#edge)"/>
 <rect x="529.99" y="64" width="213.63" height="18" fill="url(#g1)"/>
 <rect x="529.99" y="64" width="213.63" height="18" fill="url(#edge)"/>
-<rect x="743.63" y="64" width="29.30" height="18" fill="url(#g2)"/>
-<rect x="743.63" y="64" width="29.30" height="18" fill="url(#edge)"/>
+<rect x="743.62" y="64" width="29.31" height="18" fill="url(#g2)"/>
+<rect x="743.62" y="64" width="29.31" height="18" fill="url(#edge)"/>
 <rect x="772.93" y="64" width="14.24" height="18" fill="url(#g3)"/>
 <rect x="772.93" y="64" width="14.24" height="18" fill="url(#edge)"/>
 <rect x="787.17" y="64" width="12.09" height="18" fill="url(#g4)"/>
@@ -46,7 +46,7 @@
 <g mask="url(#reflectmask)" transform="translate(0,164) scale(1,-1)">
 <rect x="276.00" y="64" width="253.99" height="18" fill="#3178C6"/>
 <rect x="529.99" y="64" width="213.63" height="18" fill="#F7DF1E"/>
-<rect x="743.63" y="64" width="29.30" height="18" fill="#3776AB"/>
+<rect x="743.62" y="64" width="29.31" height="18" fill="#3776AB"/>
 <rect x="772.93" y="64" width="14.24" height="18" fill="#68217A"/>
 <rect x="787.17" y="64" width="12.09" height="18" fill="#0553B1"/>
 <rect x="799.26" y="64" width="10.74" height="18" fill="#F34B7D"/>
